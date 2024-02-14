@@ -1,0 +1,61 @@
+﻿@model Form
+@{
+    ViewData["Title"] = "form";
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!--
+    One last page with a form to enter movies into the collection. The new movie
+form should allow to enter all the information currently contained in the
+spreadsheet linked above.-->
+
+
+<h1> Enter Movies into the Collection ! Yeet </h1>
+<form method ="post"> 
+    <label asp-for="MovieCategory">Category: </label>
+    <input asp-for="MovieCategory"/>
+    <br />
+    <label asp-for="MovieTitle">Title: </label>
+    <input asp-for="MovieTitle"/>
+    <br />
+    <label asp-for="MovieYear">Year: </label>
+    <input asp-for="MovieYear"/>
+    <br />
+    <label asp-for="MovieDirector">Director: </label>
+    <input asp-for="MovieDirector"/>
+    <br />
+
+    <!-- For the Rating field, use a dropdown menu (G, PG, PG-13, R)-->
+    <label asp-for="MovieRating">Rating: </label>
+    <select asp-for="MovieRating"> 
+        <option value="">select a rating</option>
+        <option value="G">G</option>
+        <option value="PG">PG</option>
+        <option value="PG-13">PG-13</option>
+        <option value="R">R</option>
+    </select>
+    <br />
+    <br />
+
+    <!--The “Edited”, “Lent To”, and “Notes” are not required to create a new
+    record. All other fields must be entered.-->
+    <!-- NOT REQUIRED FIELDS -->
+    <!--For the Edited field, we want that to be a yes/no (true/false) option.-->
+    <label asp-for="MovieEdited">Edited? </label>
+    <select asp-for="MovieEdited">
+        <input value ="true">Yes</input>
+        <input value="false">No</input>
+    </select>
+    <br />
+    <label asp-for="MovieLent">Lent: </label>
+    <input asp-for="MovieLent"/>
+    <br />
+
+    <!-- Notes should be limited to 25 characters.-->
+    <label asp-for="MovieNotes">Notes: </label>
+    <input asp-for="MovieNotes"/>
+    <br />
+
+    <button type="submit">Submit Movie</button>
+</form>
