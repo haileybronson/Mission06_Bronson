@@ -27,7 +27,7 @@ namespace Mission06_Bronson.Models
         public string MovieRating {  get; set; }
 
         //NOT REQUIRED INPUTS 
-        public bool MovieEdited { get; set; }
+        public bool? MovieEdited { get; set; }
         public string? MovieLent { get; set; }
 
         //Notes should be limited to 25 characters
