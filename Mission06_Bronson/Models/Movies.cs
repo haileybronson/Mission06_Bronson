@@ -1,5 +1,6 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mission06_Bronson.Models
 {
@@ -9,10 +10,14 @@ namespace Mission06_Bronson.Models
     {
         [Key]
         [Required]
-        public int MovieID { get; set; } //primary key for table 
+        public int MovieId { get; set; } //primary key for table 
 
         [Required(ErrorMessage = "This field is required.")]
+
+        //creating foreign key to other table 
+        [ForeignKey("CategoryId")]
         public required string CategoryId { get; set; }
+        public Categories Categories { get; set; }
 
         [Required(ErrorMessage = "This field is required.")]
         public required string Title { get; set; }

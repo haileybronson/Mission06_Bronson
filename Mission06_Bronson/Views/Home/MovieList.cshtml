@@ -3,32 +3,43 @@
 *@
 @{
 }
-@model List<Application>
 
-<table> 
-    <thead>
-        <td>MovieId</td>
-        <td>CategoryId</td>
-        <td>Title</td>
-        <td>Year</td>
-        <td>Director</td>
-        <td>Rating</td>
-        <td>Edited</td>
-        <td>LentTo</td>
-        <td>CopiedToPlex</td>
-        <td>Notes</td>   
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<Movies>
+
+<table class="table table-bordered">
+    <thead class="fw-bold">
+        <tr>
+            <td>MovieId</td>
+            <td>CategoryId</td>
+            <td>Title</td>
+            <td>Year</td>
+            <td>Director</td>
+            <td>Rating</td>
+            <td>Edited</td>
+            <td>LentTo</td>
+            <td>CopiedToPlex</td>
+            <td>Notes</td> 
+        </tr>
     </thead>
 
+    @foreach (var x in Model)
+    {
     <tbody>
-        <td>@Model.CategoryId</td>
-        <td>@Model.Title</td>
-        <td>@Model.Year</td>
-        <td>@Model.Director</td>
-        <td>@Model.Rating</td>
-        <td>@Model.Edited</td>
-        <td>@Model.LentTo</td>
-        <td>@Model.CopiedToPlex</td>
-        <td>@Model.Notes</td>
-    <td></td>
+        <tr>
+            <td>@x.CategoryId</td>
+            <td>@x.Title</td>
+            <td>@x.Year</td>
+            <td>@x.Director</td>
+            <td>@x.Rating</td>
+            <td>@x.Edited</td>
+            <td>@x.LentTo</td>
+            <td>@x.CopiedToPlex</td>
+            <td>@x.Notes</td>
+        </tr>
     </tbody>
+    }
+    
 </table>
