@@ -7,7 +7,7 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@model List<Movies>
+@model List<Movie>
 
 <table class="table table-bordered">
     <thead class="fw-bold">
@@ -29,6 +29,7 @@
     {
     <tbody>
         <tr>
+            <td>@x.MovieId</td>
             <td>@x.CategoryId</td>
             <td>@x.Title</td>
             <td>@x.Year</td>

@@ -7,17 +7,17 @@ namespace Mission06_Bronson.Models
         public MovieFormContext(DbContextOptions<MovieFormContext> options) : base (options) // constructor
         { 
         }
-        public DbSet<Movies> Movies { get; set; }
-        public DbSet<Categories> Categories { get; set; }
+        public DbSet<Movie> Movies { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) //seed data
         {
-            modelBuilder.Entity<Categories>().HasData(
-
-                new Categories { CategoryId = 1, Category = "Action" },
-                new Categories { CategoryId = 2, Category = "Adventure" },
-                new Categories { CategoryId = 3, Category = "Scientific" },
-                new Categories { CategoryId = 4, Category = "Thriller" }
+            modelBuilder.Entity<Category>().HasData(
+                                                      
+                new Category { CategoryId = 1, CategoryName = "Action" },
+                new Category { CategoryId = 2, CategoryName = "Adventure" },
+                new Category { CategoryId = 3, CategoryName = "Scientific" },
+                new Category { CategoryId = 4, CategoryName = "Thriller" }
 
             );
         }

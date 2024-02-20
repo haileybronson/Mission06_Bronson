@@ -18,20 +18,20 @@ namespace Mission06_Bronson.Controllers
         }
 
         [HttpGet]
-        public IActionResult form()
+        public IActionResult Movies()
         {
-            return View("form");
+            return View();
         }
 
 
         [HttpPost]
-        public IActionResult form(Movies response)
+        public IActionResult Movies(Movie response)
         {
             //The “Edited”, “Lent To”, and “Notes” are not required to create a new
             //record. All other fields must be entered.
             //if its not null, return, if it is null, set to empty string
-            response.LentTo = response.LentTo ?? "";
-            response.Notes = response.Notes ?? "";
+            //response.LentTo = response.LentTo ?? "";
+            //response.Notes = response.Notes ?? "";
 
             _context.Movies.Add(response); //adds record to the database
             _context.SaveChanges();
