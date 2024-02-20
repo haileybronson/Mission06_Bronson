@@ -3,18 +3,32 @@
 *@
 @{
 }
+@model List<Application>
 
 <table> 
     <thead>
-        <td>Movie Category</td>
-        <td>Movie Title</td>
-        <td>Movie Year</td>
-        <td>Movie Director</td>
-        <td>Movie Rating</td>
-    <td>Movie Director</td>
+        <td>MovieId</td>
+        <td>CategoryId</td>
+        <td>Title</td>
+        <td>Year</td>
+        <td>Director</td>
+        <td>Rating</td>
+        <td>Edited</td>
+        <td>LentTo</td>
+        <td>CopiedToPlex</td>
+        <td>Notes</td>   
     </thead>
 
     <tbody>
-
+        <td>@Model.CategoryId</td>
+        <td>@Model.Title</td>
+        <td>@Model.Year</td>
+        <td>@Model.Director</td>
+        <td>@Model.Rating</td>
+        <td>@Model.Edited</td>
+        <td>@Model.LentTo</td>
+        <td>@Model.CopiedToPlex</td>
+        <td>@Model.Notes</td>
+    <td></td>
     </tbody>
 </table>

@@ -1,6 +1,6 @@
-﻿@model Form
+﻿@model Movies
 @{
-    ViewData["Title"] = "form";
+    ViewData["Title"] = "Movies";
 }
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -54,7 +54,7 @@ spreadsheet linked above.-->
     <br />
 
     <!--this is probably wrong, DB says int, but I'm treating it as bool-->
-    <label asp-for="ECopiedToPlex">Copied to Plex? </label>
+    <label asp-for="CopiedToPlex">Copied to Plex? </label>
     <select asp-for="CopiedToPlex">
         <option value="true">Yes</option>
         <option value="false">No</option>

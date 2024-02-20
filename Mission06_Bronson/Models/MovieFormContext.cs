@@ -7,7 +7,6 @@ namespace Mission06_Bronson.Models
         public MovieFormContext(DbContextOptions<MovieFormContext> options) : base (options) // constructor
         { 
         }
-
         public DbSet<Movies> Movies { get; set; }
     }
 }

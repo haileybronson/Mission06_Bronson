@@ -25,15 +25,15 @@ namespace Mission06_Bronson.Controllers
 
 
         [HttpPost]
-        public IActionResult form(Form response)
+        public IActionResult form(Movies response)
         {
             //The “Edited”, “Lent To”, and “Notes” are not required to create a new
             //record. All other fields must be entered.
             //if its not null, return, if it is null, set to empty string
-            response.MovieLent = response.MovieLent ?? "";
-            response.MovieNotes = response.MovieNotes ?? "";
+            response.LentTo = response.LentTo ?? "";
+            response.Notes = response.Notes ?? "";
 
-            _context.Forms.Add(response); //adds record to the database
+            _context.Movies.Add(response); //adds record to the database
             _context.SaveChanges();
 
             return View("Confirmation");
@@ -42,6 +42,15 @@ namespace Mission06_Bronson.Controllers
         public IActionResult knowJoel()
         {
             return View();
+        }
+
+        public IActionResult MovieList()
+        {
+            //Linq
+            var movies = _context.Movies
+                .OrderBy(x => x.Title).ToList();
+
+            return View(movies);
         }
 
         
