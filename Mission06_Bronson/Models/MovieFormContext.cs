@@ -8,7 +8,7 @@ namespace Mission06_Bronson.Models
         { 
         }
 
-        public DbSet<Form> Forms { get; set; }
+        public DbSet<Movies> Movies { get; set; }
     }
 }
 

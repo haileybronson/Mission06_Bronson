@@ -13,22 +13,22 @@ spreadsheet linked above.-->
 
 <h1> Enter Movies into the Collection ! Yeet </h1>
 <form method ="post"> 
-    <label asp-for="MovieCategory">Category: </label>
-    <input asp-for="MovieCategory"/>
+    <label asp-for="CategoryId">Category: </label>
+    <input asp-for="CategoryId" />
     <br />
-    <label asp-for="MovieTitle">Title: </label>
-    <input asp-for="MovieTitle"/>
+    <label asp-for="Title">Title: </label>
+    <input asp-for="Title"/>
     <br />
-    <label asp-for="MovieYear">Year: </label>
-    <input asp-for="MovieYear"/>
+    <label asp-for="Year">Year: </label>
+    <input asp-for="Year"/>
     <br />
-    <label asp-for="MovieDirector">Director: </label>
-    <input asp-for="MovieDirector"/>
+    <label asp-for="Director">Director: </label>
+    <input asp-for="Director"/>
     <br />
 
     <!-- For the Rating field, use a dropdown menu (G, PG, PG-13, R)-->
-    <label asp-for="MovieRating">Rating: </label>
-    <select asp-for="MovieRating"> 
+    <label asp-for="Rating">Rating: </label>
+    <select asp-for="Rating"> 
         <option value="">select a rating</option>
         <option value="G">G</option>
         <option value="PG">PG</option>
@@ -42,19 +42,27 @@ spreadsheet linked above.-->
     record. All other fields must be entered.-->
     <!-- NOT REQUIRED FIELDS -->
     <!--For the Edited field, we want that to be a yes/no (true/false) option.-->
-    <label asp-for="MovieEdited">Edited? </label>
-    <select asp-for="MovieEdited">
+    <label asp-for="Edited">Edited? </label>
+    <select asp-for="Edited">
         <option value ="true">Yes</option>
         <option value="false">No</option>
     </select>
+
     <br />
-    <label asp-for="MovieLent">Lent: </label>
-    <input asp-for="MovieLent"/>
+    <label asp-for="LentTo">Lent: </label>
+    <input asp-for="LentTo" />
     <br />
 
+    <!--this is probably wrong, DB says int, but I'm treating it as bool-->
+    <label asp-for="ECopiedToPlex">Copied to Plex? </label>
+    <select asp-for="CopiedToPlex">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+    </select>
+
     <!-- Notes should be limited to 25 characters.-->
-    <label asp-for="MovieNotes">Notes: </label>
-    <input asp-for="MovieNotes"/>
+    <label asp-for="Notes">Notes: </label>
+    <input asp-for="Notes"/>
     <br />
 
     <button type="submit">Submit Movie</button>
