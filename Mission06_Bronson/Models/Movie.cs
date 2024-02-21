@@ -9,31 +9,32 @@ namespace Mission06_Bronson.Models
     public class Movie
     {
         [Key]
-        [Required(ErrorMessage = "Field Required")]
+        [Required]
         public int MovieId { get; set; } //primary key for table 
 
-        [Required(ErrorMessage = "Field Required")]
+        [Required]
 
         //creating foreign key to other table 
         [ForeignKey("CategoryId")]
         public int? CategoryId { get; set; }
         public Category? Category { get; set; }
 
-        [Required(ErrorMessage = "Field Required")]
+        [Required(ErrorMessage = "Title: Field Required")]
         public string Title { get; set; }
 
-        [Required(ErrorMessage = "Field Required")]
+        [Required(ErrorMessage = "Year: Field Required")]
+        [Range(1888, int.MaxValue, ErrorMessage = "Movies weren't out before 1888!")]
         public int Year { get; set; }
 
         public string? Director { get; set; }
 
         public string? Rating {  get; set; }
     
-        [Required(ErrorMessage = "Field Required")]
+        [Required(ErrorMessage = "Edited: Field Required")]
         public bool Edited { get; set; }
         public string? LentTo { get; set; }
 
-        [Required(ErrorMessage = "Field Required")]
+        [Required(ErrorMessage = "CopiedToPlex: Field Required")]
         public bool CopiedToPlex { get; set; }
 
         //Notes should be limited to 25 characters
