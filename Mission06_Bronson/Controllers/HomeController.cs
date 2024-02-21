@@ -53,14 +53,23 @@ namespace Mission06_Bronson.Controllers
             return View(movies);
         }
 
-        public IActionResult Edit(int recordId)
+        [HttpGet]
+        public IActionResult Edit(int Id)
         {
             var recordToEdit = _context.Movies
-                .Where(x => x.MovieId == recordId);
+                .Single(x => x.MovieId == Id);
             
-            return View("Movies");
+            return View("Movies", recordToEdit);
         }
 
+        [HttpPost]
+        public IActionResult Edit(Movie updatedInfo)
+        {
+            _context.Update(updatedInfo);
+            _context.SaveChanges();
+
+            return RedirectToAction("MovieList");
+        }
 
     }
 }
